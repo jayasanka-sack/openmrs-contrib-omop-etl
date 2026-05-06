@@ -15,10 +15,7 @@ MODEL(
 SELECT c.cohort_id                       AS cohort_definition_id,
        c.name                            AS cohort_definition_name,
        c.description                     AS cohort_definition_description,
-       CASE
-           WHEN c.definition_handler IS NOT NULL THEN 44819108 -- Criteria Based
-           ELSE 44819114                                        -- Ad hoc
-           END                           AS definition_type_concept_id,
+       0                                 AS definition_type_concept_id, -- TODO: replace with OMOP Cohort Type concept_id (e.g. 44819108 Criteria Based / 44819114 Ad hoc) once verified in Athena
        c.definition_handler_config       AS cohort_definition_syntax,
        0                                 AS subject_concept_id,
        DATE(c.startDate)                 AS cohort_initiation_date
