@@ -21,7 +21,7 @@ The table below shows which OMOP Common Data Model (CDM) entities are covered by
 | [PERSON](core/models/person.sql) | DONE | |
 | [OBSERVATION\_PERIOD](core/models/observation_period.sql) | DONE | |
 | [VISIT\_OCCURRENCE](core/models/visit_occurrence.sql) | DONE | |
-| VISIT\_DETAIL | DONE | |
+| VISIT\_DETAIL | N/a | Intended for hierarchical care-unit/ADT-style sub-visits, which OpenMRS encounters do not consistently represent, so a reliable semantic mapping is not currently possible |
 | [CONDITION\_OCCURRENCE](core/models/condition_occurrence.sql) | DONE | |
 | [DRUG\_EXPOSURE](core/models/drug_exposure.sql) | DONE | |
 | PROCEDURE\_OCCURRENCE | PENDING | Not yet released; pending upstream feature availability |
