@@ -229,6 +229,9 @@ case "$command" in
   import-omop-concepts)
     import-omop-concepts
     ;;
+  apply-omop-constraints)
+    apply-omop-constraints
+    ;;
   populate-cdm-source)
     populate-cdm-source
     ;;
