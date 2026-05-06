@@ -63,7 +63,8 @@ FROM openmrs.drug_order AS do
                        AND drug_cm.domainId = 'Drug'
          LEFT JOIN raw.CONCEPT_MAPPING route_cm
                    ON do.route = route_cm.sourceCode
-                       AND route_cm.domainId = 'Route'
+                       -- Seed uses 'Meas Value' for route concepts (USAGI auto-generation artefact)
+                       AND route_cm.domainId IN ('Route', 'Meas Value')
          LEFT JOIN openmrs.concept_name route_cn
                    ON do.route = route_cn.concept_id
                        AND route_cn.locale = 'en'
