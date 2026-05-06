@@ -15,9 +15,9 @@ RUN apt-get update && \
 
 
 # Install sqlmesh (force system install)
-# Pin dateparser<2.0.0: dateparser 2.x introduced a breaking change in grain_kwargs
-# that causes a TypeError in SQLMesh 0.190.0's cache initializer.
-RUN pip install --break-system-packages sqlmesh==0.190.0 'dateparser<2.0.0'
+# Pin dateparser<1.3.0: dateparser 1.3.0 changed get_kwargs() to return a tuple
+# (kwargs, explicit_signs) instead of a single dict, breaking SQLMesh 0.190.0.
+RUN pip install --break-system-packages sqlmesh==0.190.0 'dateparser<1.3.0'
 RUN pip install --break-system-packages pymysql
 RUN pip install --break-system-packages sqlalchemy
 RUN pip install --break-system-packages pandas

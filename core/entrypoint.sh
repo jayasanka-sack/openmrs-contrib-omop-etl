@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 export PGPASSWORD=$TARGET_PASS
 MYSQL_USER="root"
